@@ -1,6 +1,9 @@
-import mongoose from 'mongoose';
-
-mongoose.connect('mongodb://localhost/api_liber', { useMongoClient: true });
+const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/api_liber", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+});
 
-export default mongoose;
+module.exports = mongoose;
